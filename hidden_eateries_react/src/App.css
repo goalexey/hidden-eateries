@@ -1,0 +1,700 @@
+@import
+url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+* {
+  box-sizing: border-box;
+}
+
+.right{
+  text-align: right;
+}
+
+/*HEADER COMPONENT STYLING*/
+
+/*overlay creates color overlay over the background image so it's not as bright */
+.overlay{
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(50,50,50,.4);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/*create entry button that opens modal with input fields for entering new restaurant info*/
+.create-entry{
+  margin: 20px 0 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  width: 100px;
+  background-color: transparent;
+  color: honeydew;
+  border: solid honeydew 1px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 13px;
+  cursor: pointer;
+  transition: .250s;
+}
+
+.create-entry:hover{
+  background-color: whitesmoke;
+  color: #888;
+}
+
+/*f-modal*/
+#f-modal{
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-color: rgba(0,0,0,.8);
+  opacity: 0;
+  pointer-events: none;
+  transition: 400ms;
+}
+
+#f-modal-div{
+  padding-bottom: 40px;
+  text-align: center;
+  margin: auto;
+  width: 600px;
+  height: auto;
+  background-color: whitesmoke;
+  background: -webkit-radial-gradient(circle, whitesmoke 1%, grey);
+}
+
+/*fpif - front page input fields*/
+.fpif{
+  margin: 15px auto;
+  font-size: 15px;
+  width: 60%;
+  display: block;
+  height: 35px;
+  border-radius: 4px;
+}
+
+.fpif:focus{
+  background-color: beige;
+  outline: none;
+  box-shadow: 0 3px 8px black;
+}
+
+/*area that closes model on click*/
+.close-modal-area{
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -5;
+}
+
+/*close div and button design*/
+.x-div{
+  margin-bottom: 20px;
+  position: relative;
+  height: 30px;
+}
+
+.x{
+  position: absolute;
+  right: 5px; top: 5px;
+  height: 30px;
+  width: 30px; 
+}
+
+.x-l{
+  position: absolute;
+  height: 2px;
+  width: 30px;
+  background-color: black;
+  transform: rotateZ(45deg);
+  top: 13px;
+}
+
+.x-r{
+  position: absolute;
+  height: 2px;
+  width: 30px;
+  background-color: black;
+  transform: rotateZ(-45deg);
+  top: 13px;
+}
+
+.f-submit{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  width: 100px;
+  background-color: transparent;
+  color: #888;
+  border: solid #888 2px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 4px 7px #888;
+  transition: .200s;
+}
+
+.f-submit:hover{
+  box-shadow: 0 8px 10px -8px #888;
+  border: solid #777 2px;
+  color: #666;
+  
+}
+
+
+
+.title-div{
+  text-align: center;
+  color: honeydew;
+  margin: auto;
+  width: 400px;
+  font-size: 40px;
+  font-style: italic;
+  font-weight: 100;
+  text-shadow: 0 5px 10px black;
+}
+
+#eat-logo{
+  margin: auto;
+  text-align: center;
+  border-radius: 50%;
+  background-color: honeydew;
+  width: 150px;
+}
+
+.title-div img{
+  width: 150px;
+}
+
+/*BOROUGH COMPONENT STYLING*/
+
+.borough-container{
+  margin: 10px auto;
+  width: 700px;
+  height: 100px;
+}
+
+.borough-container:after{
+  content: '';
+  clear: both;
+  display: table;
+}
+
+.borough-div{
+  padding-top: 20px;
+  float: left;
+  text-align: center;
+  box-sizing: border-box;
+  color: honeydew;
+  width: 20%;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 100;
+  border-right: solid grey 1px;
+  border-top: solid grey 1px;
+  cursor: pointer;
+  background-color: rgba(0,0,0,.5);
+  transition: .250s;
+}
+
+.borough-div:hover{
+  background-color: honeydew;
+  color: black;
+}
+
+/*RESTAURANT COMPONENT STYLING*/
+
+.rest-render{
+  margin-bottom: 50px;
+}
+
+.rest-render-div{
+  margin-bottom: 30px;
+}
+
+.r-row{
+  display: flex;
+  align-items: center;
+  padding: 10px 60px;
+  height: 70px;
+  border-top: solid grey 1px;
+  background-color: whitesmoke;
+}
+
+.r-row:after{
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.r-section{
+  text-align: center;
+  box-sizing: border-box;
+  width: 22%;
+  float: left;
+}
+
+.r-image{
+  height: 60px;
+}
+
+.r-image img{
+  border: solid #888 2px;
+  border-radius: 5px;
+  height: 60px;
+  width: 80px;
+  cursor: pointer;
+}
+
+.r-name{
+  font-size: 18px;
+  font-family: impact;
+}
+
+.r-address{
+  font-size: 14px;
+}
+
+.r-cuisine{
+  font-size: 14px;
+}
+
+.edit-buttons{
+  box-sizing: border-box;
+  width: 12%;
+  text-align: center;
+  float: left;
+}
+
+.r_modal{
+  position: fixed;
+  left: 0; right: 0; bottom: 0; top: 0;
+  pointer-events: none;
+  background-color: rgba(0,0,0,.7);
+  opacity: 0;
+  transition: .6s;
+  z-index: 1;
+}
+
+/*JAMES RESTAURANT CODE*/
+
+.hidden{
+  display: none;
+}
+
+#btn-edit, #btn-save{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px auto;
+  display: block;
+  background-color: grey;
+  width: 50px;
+  height: 20px;
+  font-size: 12px;
+  border-radius: 2px;
+  background-color: #e8edf4;
+  border: solid #bfbfbf 1px;
+  outline: none;
+  box-shadow: 0 1px 2px;
+  cursor: pointer;
+}
+
+
+#btn-delete{
+  margin: 8px auto;
+  /*display: block;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 20px;
+  font-size: 12px;
+  border: solid #bfbfbf 1px;
+  border-radius: 2px;
+  outline: none;
+  background-color: #e8edf4;
+  box-shadow: 0 1px 2px;
+  cursor: pointer;
+}
+
+.r-edit-input{
+  height: 30px;
+  background-color: #fcfdff;
+  width: 17%;
+  float:left;
+}
+
+.r-edit-input:focus{
+  outline: none;
+  box-shadow: 0 0 1px -1px black;
+  background-color: beige;
+}
+
+
+
+
+
+
+
+/*SINGLEREST COMPONENT STYLE*/
+
+
+.r_container{
+  padding: 10px;
+  height: 600px;
+  width: 800px;
+  margin: auto;
+  background-color: whitesmoke;
+  background: -webkit-radial-gradient(circle, whitesmoke 1%, grey);
+  text-align: center;
+  z-index: 5;
+}
+
+.r_close-div{
+  height: 40px;
+}
+
+#r_close{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right:5px; top:5px;
+  width: 70px;
+  height: 30px;
+  background-color: transparent;
+  color: #888;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+#r_close:hover{ 
+  color: #555; 
+}
+
+#r_close_area{
+  position: fixed;
+  left:0; right:0; top:0; bottom:0;
+}
+
+.rsub_contL{
+  background-color: whitesmoke;
+  box-sizing: border-box;
+  width: 50%;
+  text-align: center;
+  float: left;
+  text-align: center;
+}
+
+.rsub_contR{
+  box-sizing: border-box;
+  width: 50%;
+  text-align: center;
+  float: left;
+}
+
+.r_name{
+  text-align: center;
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.r_image{
+  margin: auto;
+  background-color: whitesmoke;
+  width: 380px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.r_image img{
+  width: 350px;
+  height: 300px;
+}
+
+.r_cuisine{
+  
+  margin-top: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.r_address{
+  margin-top: 10px;
+  padding-bottom: 133px;
+}
+
+.comments-div{
+  padding: 0 10px;
+  margin: auto;
+  width: 100%;
+  height: 410px;
+  overflow: auto;
+  background-color: whitesmoke; 
+}
+
+#comments{
+  height: 40px;
+  color: darkgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid grey 1px;
+}
+
+.above-comment{
+  border-radius: 10px 10px 0 0;
+  background-color: white;
+}
+
+.c-comment{
+  padding-bottom: 10px;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: 100;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+}
+
+.c-name{
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.c-date{
+  font-size: 11px;
+  margin-bottom: 20px;
+}
+
+.c-name span, .c-date > span{
+  font-style: italic;
+}
+
+.c-delete{
+  padding: 5px 10px 0 0;
+  cursor: pointer;
+}
+
+.c-text{
+  margin: 0;
+  padding: 0;
+}
+
+.c-post{
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+}
+
+.post-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  width: 80px;
+  background-color: transparent;
+  font-size: 13px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 1px 2px;
+  background-color: #e8edf4;
+  border-radius: 2px;
+  border: solid #bfbfbf 1px;
+}
+
+.post-btn:hover{
+  background-color: #e3e7ed;
+  box-shadow: 0 2px 7px 1px grey;
+}
+
+/*INPUT FIELD*/
+
+.input-section{
+  width: 100%;
+  text-align: right;
+}
+
+.input-section:after{
+  content: '';
+  clear: both;
+  display: table;
+}
+
+.name-field{
+  height: 30px;
+  width: 100%;
+  border-radius: 2px;
+  outline: none;
+}
+
+.text-field{
+  height: 60px;
+  width: 100%;
+  border-radius: 2px;
+  outline: none;
+  resize: none;
+}
+
+.name-field:focus{
+  background-color: beige;
+}
+
+.text-field:focus{
+  background-color: beige;
+}
+
+
+/*FOOTER*/
+
+.footer{
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    height: 40px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.icons{
+  margin: 0 5px;
+}
+
+/*#########################
+#######MEDIA QUERIES#######
+###########################*/
+
+
+@media only screen and (max-width: 700px){
+  
+ /* body{
+    background: url('./images/mob-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }*/
+  
+  /*HEADER COMPONENT MEDIA QUERY*/
+  
+  .title-div{
+    margin: 10px auto;
+    font-size: 26px;
+    width: 300px;
+  }
+  
+  .create-entry{
+    margin: 20px auto 0;
+  }
+  
+  #f-modal-div{
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
+  display: flex;
+  align-items: space-around;
+  flex-direction: column;
+}
+  
+ /* BOROUGHS COMPONENT MEDIA QUERY*/
+ 
+  .borough-container{
+    margin: 10px auto;
+    width: 100%;
+    height: 70px;
+  }
+  
+  .borough-div{
+    padding-top: 20px;
+    text-align: center;
+    width: 20%;
+    height: 60px;
+    font-size: 3vw;
+    border-right: solid grey 1px;
+    border-top: solid grey 1px;
+    cursor: pointer;
+    background-color: rgba(0,0,0,.5);
+  }
+  
+  /*REST DIV QUERY*/
+  
+  .r-row{
+    display: block;
+    padding: 10px 60px;
+    height: 120px;
+    border-top: solid grey 1px;
+    background-color: whitesmoke;
+  }
+  
+  .r-section{
+    text-align: center;
+    display: block;
+    width: 100%;
+    clear: both;
+    float: none;
+  }
+  
+  .r-image{
+    width: 100%;
+    clear: both;
+    display: block;
+    clear: both;
+  }
+  
+  .edit-buttons{
+    
+    display: none;
+  }
+  
+  .r-address{
+    display: none;
+  }
+  
+  /*SINGLE REST COMPONENT QUERY*/
+  
+  .r_modal{
+    position: fixed;
+    left: 0; right: 0; bottom: 0; top: 0;
+    overflow: auto;
+  }
+  
+  .r_container{
+    width: 100%;
+    padding: 0;
+  }
+  
+  .rsub_contL{
+    background-color: whitesmoke;
+    width: 100%;
+    text-align: center;
+    float: none;
+    clear: both;
+    text-align: center;
+  }
+  
+  .r_image img{
+    width: 100%;
+    height: 100%;
+  }
+
+  .rsub_contR{
+    width: 100%;
+    text-align: center;
+    float: none;
+    clear: both;
+    text-align: center;
+  }
+  
+  .comments-div{
+    width: 100%;
+    height: auto;
+  }
+  
+  
+  /*.input-section{
+    width: 100%;
+  }*/
+  
+}

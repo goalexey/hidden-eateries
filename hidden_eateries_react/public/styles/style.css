@@ -1,0 +1,32 @@
+
+body{
+    background: url('../images/background08.jpg') no-repeat center center fixed;
+}
+
+.map {
+    height: 400px;
+    width: 400px;
+    margin-top: 60px;
+}
+
+#floating-panel {
+    position: absolute;
+    top: 10px;
+    left: 25%;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+@media only screen and (max-width: 600px){
+  
+  body{
+    background:  url('../images/mob-background.jpg') no-repeat center center fixed !important;
+    background-size: cover;
+  }
+}
